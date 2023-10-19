@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Prueba_ImfarsaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estado_Tarea">
+    <Key>
+      <PropertyRef Name="Id_Estado" />
+    </Key>
+    <Property Name="Id_Estado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prioridad">
+    <Key>
+      <PropertyRef Name="Id_Prioridad" />
+    </Key>
+    <Property Name="Id_Prioridad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarea">
+    <Key>
+      <PropertyRef Name="Id_Tarea" />
+    </Key>
+    <Property Name="Id_Tarea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Id_Estado" Type="int" Nullable="false" />
+    <Property Name="Fecha_Creacion" Type="datetime" Nullable="false" />
+    <Property Name="Fecha_Estado" Type="datetime" />
+    <Property Name="Fecha_Inicio" Type="datetime" Nullable="false" />
+    <Property Name="Fecha_Fin" Type="datetime" Nullable="false" />
+    <Property Name="Id_Prioridad" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Tarea_Estado_Tarea">
+    <End Role="Estado_Tarea" Type="Self.Estado_Tarea" Multiplicity="1" />
+    <End Role="Tarea" Type="Self.Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Tarea">
+        <PropertyRef Name="Id_Estado" />
+      </Principal>
+      <Dependent Role="Tarea">
+        <PropertyRef Name="Id_Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarea_Prioridad">
+    <End Role="Prioridad" Type="Self.Prioridad" Multiplicity="1" />
+    <End Role="Tarea" Type="Self.Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prioridad">
+        <PropertyRef Name="Id_Prioridad" />
+      </Principal>
+      <Dependent Role="Tarea">
+        <PropertyRef Name="Id_Prioridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Prueba_ImfarsaModelStoreContainer">
+    <EntitySet Name="Estado_Tarea" EntityType="Self.Estado_Tarea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prioridad" EntityType="Self.Prioridad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarea" EntityType="Self.Tarea" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Tarea_Estado_Tarea" Association="Self.FK_Tarea_Estado_Tarea">
+      <End Role="Estado_Tarea" EntitySet="Estado_Tarea" />
+      <End Role="Tarea" EntitySet="Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarea_Prioridad" Association="Self.FK_Tarea_Prioridad">
+      <End Role="Prioridad" EntitySet="Prioridad" />
+      <End Role="Tarea" EntitySet="Tarea" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

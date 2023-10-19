@@ -1,0 +1,15 @@
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\Prueba_Imfarsa.exe.config
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\Prueba_Imfarsa.exe
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\Prueba_Imfarsa.pdb
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\EntityFramework.dll
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\EntityFramework.xml
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.Form1.resources
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.Properties.Resources.resources
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.csproj.GenerateResource.cache
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.csproj.CopyComplete
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.exe
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.pdb
+C:\Users\Administrador\source\repos\Prueba_Imfarsa\Prueba_Imfarsa\obj\Debug\Prueba_Imfarsa.AgregarTarea.resources

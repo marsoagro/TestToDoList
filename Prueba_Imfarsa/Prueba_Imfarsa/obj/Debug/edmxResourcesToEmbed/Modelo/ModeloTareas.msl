@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Prueba_ImfarsaModelStoreContainer" CdmEntityContainer="Prueba_ImfarsaEntities">
+    <EntitySetMapping Name="Estado_Tarea">
+      <EntityTypeMapping TypeName="Prueba_ImfarsaModel.Estado_Tarea">
+        <MappingFragment StoreEntitySet="Estado_Tarea">
+          <ScalarProperty Name="Id_Estado" ColumnName="Id_Estado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prioridad">
+      <EntityTypeMapping TypeName="Prueba_ImfarsaModel.Prioridad">
+        <MappingFragment StoreEntitySet="Prioridad">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id_Prioridad" ColumnName="Id_Prioridad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarea">
+      <EntityTypeMapping TypeName="Prueba_ImfarsaModel.Tarea">
+        <MappingFragment StoreEntitySet="Tarea">
+          <ScalarProperty Name="Id_Prioridad" ColumnName="Id_Prioridad" />
+          <ScalarProperty Name="Fecha_Fin" ColumnName="Fecha_Fin" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Fecha_Estado" ColumnName="Fecha_Estado" />
+          <ScalarProperty Name="Fecha_Creacion" ColumnName="Fecha_Creacion" />
+          <ScalarProperty Name="Id_Estado" ColumnName="Id_Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id_Tarea" ColumnName="Id_Tarea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

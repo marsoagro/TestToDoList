@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Prueba_ImfarsaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Estado_Tarea">
+    <Key>
+      <PropertyRef Name="Id_Estado" />
+    </Key>
+    <Property Name="Id_Estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Tarea" Relationship="Prueba_ImfarsaModel.FK_Tarea_Estado_Tarea" FromRole="Estado_Tarea" ToRole="Tarea" />
+  </EntityType>
+  <EntityContainer Name="Prueba_ImfarsaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Estado_Tarea" EntityType="Self.Estado_Tarea" />
+    <EntitySet Name="Prioridad" EntityType="Prueba_ImfarsaModel.Prioridad" />
+    <EntitySet Name="Tarea" EntityType="Prueba_ImfarsaModel.Tarea" />
+    <AssociationSet Name="FK_Tarea_Estado_Tarea" Association="Prueba_ImfarsaModel.FK_Tarea_Estado_Tarea">
+      <End Role="Estado_Tarea" EntitySet="Estado_Tarea" />
+      <End Role="Tarea" EntitySet="Tarea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarea_Prioridad" Association="Prueba_ImfarsaModel.FK_Tarea_Prioridad">
+      <End Role="Prioridad" EntitySet="Prioridad" />
+      <End Role="Tarea" EntitySet="Tarea" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Prioridad">
+    <Key>
+      <PropertyRef Name="Id_Prioridad" />
+    </Key>
+    <Property Name="Id_Prioridad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tarea" Relationship="Prueba_ImfarsaModel.FK_Tarea_Prioridad" FromRole="Prioridad" ToRole="Tarea" />
+  </EntityType>
+  <EntityType Name="Tarea">
+    <Key>
+      <PropertyRef Name="Id_Tarea" />
+    </Key>
+    <Property Name="Id_Tarea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Estado" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fecha_Estado" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Inicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fecha_Fin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id_Prioridad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Estado_Tarea" Relationship="Prueba_ImfarsaModel.FK_Tarea_Estado_Tarea" FromRole="Tarea" ToRole="Estado_Tarea" />
+    <NavigationProperty Name="Prioridad" Relationship="Prueba_ImfarsaModel.FK_Tarea_Prioridad" FromRole="Tarea" ToRole="Prioridad" />
+  </EntityType>
+  <Association Name="FK_Tarea_Estado_Tarea">
+    <End Type="Prueba_ImfarsaModel.Estado_Tarea" Role="Estado_Tarea" Multiplicity="1" />
+    <End Type="Prueba_ImfarsaModel.Tarea" Role="Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Tarea">
+        <PropertyRef Name="Id_Estado" />
+      </Principal>
+      <Dependent Role="Tarea">
+        <PropertyRef Name="Id_Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarea_Prioridad">
+    <End Type="Prueba_ImfarsaModel.Prioridad" Role="Prioridad" Multiplicity="1" />
+    <End Type="Prueba_ImfarsaModel.Tarea" Role="Tarea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prioridad">
+        <PropertyRef Name="Id_Prioridad" />
+      </Principal>
+      <Dependent Role="Tarea">
+        <PropertyRef Name="Id_Prioridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
